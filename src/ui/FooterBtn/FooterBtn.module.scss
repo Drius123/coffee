@@ -1,0 +1,8 @@
+@use "../../styles/constants.module.scss" as constants;
+
+.btn {
+  width: functions.rem(60);
+  height: functions.rem(60);
+  border-radius: functions.rem(100);
+  border: functions.rem(1) solid constants.$footerBtnBorder;
+}
