@@ -5,19 +5,29 @@
 .footer {
   display: flex;
   padding: functions.rem(100);
-  column-gap: functions.rem(100);
-  height: functions.rem(450);
+  @include mixin.adaptiveClamp(
+    $property: column-gap,
+    $startSize: 100,
+    $minSize: 30
+  );
+  min-height: functions.rem(450);
   background-color: constants.$footerBgColor;
   border-radius: functions.rem(40);
   color: constants.$footerTextColor;
   &__left {
     h2 {
       @include mixin.font($size: 60, $height: 125%, $weight: 600);
+      @include mixin.adaptiveClamp(
+        $property: font-size,
+        $startSize: 60,
+        $minSize: 32
+      );
     }
     .coffee {
       color: constants.$footerH2SecondColor;
     }
     .btns {
+      margin-top: functions.rem(40);
       display: flex;
       column-gap: functions.rem(12);
     }
