@@ -1,0 +1,13 @@
+@use "../../styles/constants.module.scss" as constants;
+@use "../../styles/functions.module.scss" as functions;
+@use "../../styles/mixin.module.scss" as mixin;
+
+.btn {
+  width: functions.rem(200);
+  background-color: constants.$bgColor;
+  height: functions.rem(64);
+  border-radius: functions.rem(100);
+  color: constants.$textColor;
+  text-align: center;
+  @include mixin.font($size: 16, $height: 150%, $weight: 600);
+}

@@ -3,7 +3,7 @@ import { Navigate, Route, Routes } from "react-router-dom";
 import routeNames from "./routing/routs";
 import AppLayout from "./app-layout/appLayout";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
-import HomePage from "./pages/NotFoundPage/HomePage/HomePage";
+import HomePage from "./pages/HomePage/HomePage";
 
 function App() {
   return (
