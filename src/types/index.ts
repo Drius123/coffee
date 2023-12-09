@@ -1,5 +1,5 @@
 export enum EnumText {
-  TEXT = "hello",
+  Menu = "Menu",
 }
 
 export interface SomeInt {

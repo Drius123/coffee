@@ -1,3 +1,16 @@
 @use "../../styles/constants.module.scss" as constants;
 @use "../../styles/functions.module.scss" as functions;
 @use "../../styles/mixin.module.scss" as mixin;
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: constants.$textColor;
+  .menu {
+    @include mixin.font($size: 16, $height: 150%, $weight: 600);
+    img {
+      padding-left: functions.rem(8);
+    }
+  }
+}

@@ -1,0 +1,15 @@
+@use "../../styles/constants.module.scss" as constants;
+@use "../../styles/functions.module.scss" as functions;
+@use "../../styles/mixin.module.scss" as mixin;
+
+.nav {
+  .nav-menu {
+    display: flex;
+    column-gap: functions.rem(40);
+    .item {
+      a {
+        @include mixin.font($size: 16, $height: 150%, $weight: 600);
+      }
+    }
+  }
+}

@@ -21,16 +21,16 @@
   max-width: functions.rem(constants.$maxWidthContainer);
   margin: 0 auto;
 
-  padding-top: 0;
-  padding-bottom: 0;
+  padding-top: functions.rem(20);
+  padding-bottom: functions.rem(40);
   @include mixin.adaptiveClamp(
     $property: padding-left,
-    $startSize: 50,
+    $startSize: 40,
     $minSize: 16
   );
   @include mixin.adaptiveClamp(
     $property: padding-right,
-    $startSize: 50,
+    $startSize: 40,
     $minSize: 16
   );
 }
