@@ -1,5 +1,5 @@
 import styles from "./Nav.module.scss";
-import NavItems from "../../data";
+import { NavItems } from "../../data";
 
 export default function Nav() {
   return (

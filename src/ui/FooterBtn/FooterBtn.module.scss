@@ -1,8 +1,13 @@
 @use "../../styles/constants.module.scss" as constants;
+@use "../../styles/functions.module.scss" as functions;
+@use "../../styles/mixin.module.scss" as mixin;
 
 .btn {
   width: functions.rem(60);
   height: functions.rem(60);
   border-radius: functions.rem(100);
   border: functions.rem(1) solid constants.$footerBtnBorder;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

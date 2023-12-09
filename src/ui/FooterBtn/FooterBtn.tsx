@@ -1,10 +1,6 @@
 import { NavLink } from "react-router-dom";
 import styles from "./FooterBtn.module.scss";
-
-interface FooterBtnProps {
-  SVG: string;
-  link: string;
-}
+import { FooterBtnProps } from "../../types";
 
 export default function FooterBtn({ SVG, link }: FooterBtnProps) {
   return (

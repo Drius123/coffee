@@ -5,3 +5,10 @@ export enum EnumText {
 export interface SomeInt {
   one: string;
 }
+
+export interface FooterBtnProps {
+  SVG: string;
+  link: string;
+}
+
+export type FooterBtns = FooterBtnProps[];
