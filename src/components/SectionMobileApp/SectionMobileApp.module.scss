@@ -1,0 +1,35 @@
+@use "../../styles/constants.module.scss" as constants;
+@use "../../styles/functions.module.scss" as functions;
+@use "../../styles/mixin.module.scss" as mixin;
+
+.mobile-app {
+  display: flex;
+  column-gap: functions.rem(40);
+  .download {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: functions.rem(40);
+    .title {
+      @include mixin.font($size: 60, $height: 125%, $weight: 600);
+      color: constants.$textColor;
+    }
+    .description {
+      @include mixin.font($size: 16, $height: 150%, $weight: 400);
+      color: constants.$textColor;
+    }
+    .links {
+      display: flex;
+      column-gap: functions.rem(20);
+      a {
+        display: flex;
+        @include mixin.font($size: 16, $height: 150%, $weight: 400);
+        color: constants.$textColor;
+        width: functions.rem(200);
+        padding: functions.rem(12) functions.rem(20);
+        border-radius: functions.rem(200);
+        border: functions.rem(1) solid constants.$footerBgColor;
+      }
+    }
+  }
+}
