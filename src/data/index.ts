@@ -5,6 +5,11 @@ import facebook from "../assets/social-media/facebook.svg";
 import firstSlide from "../assets/coffee/coffee-slider-1.png";
 import secondSlide from "../assets/coffee/coffee-slider-2.png";
 import thirdSlide from "../assets/coffee/coffee-slider-3.png";
+
+import firstAbout from "../assets/About/about-1.jpg";
+import secondAbout from "../assets/About/about-2.jpg";
+import thirdAbout from "../assets/About/about-3.jpg";
+import fourthAbout from "../assets/About/about-4.jpg";
 import { FooterBtns, SliderCardProps } from "../types";
 
 const NavItems = ["Favorite coffee", "About", "Mobile app", "Contact us"];
@@ -39,4 +44,6 @@ const slideCards: SliderCardProps[] = [
   },
 ];
 
-export { NavItems, footerBtns, slideCards };
+const aboutImg = [firstAbout, thirdAbout, secondAbout, fourthAbout];
+
+export { NavItems, footerBtns, slideCards, aboutImg };

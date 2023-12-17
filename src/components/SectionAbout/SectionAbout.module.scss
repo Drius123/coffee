@@ -1,0 +1,38 @@
+@use "../../styles/constants.module.scss" as constants;
+@use "../../styles/functions.module.scss" as functions;
+@use "../../styles/mixin.module.scss" as mixin;
+
+.about {
+  .text {
+    @include mixin.font($size: 60, $height: 125%, $weight: 600);
+    color: constants.$textColor;
+  }
+  .photos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: functions.rem(40);
+    .photo {
+      overflow: hidden;
+      border-radius: functions.rem(20);
+      width: functions.rem(660);
+      height: functions.rem(430);
+      @include mixin.first() {
+        height: functions.rem(590);
+      }
+      @include mixin.last() {
+        position: relative;
+        height: functions.rem(590);
+        bottom: functions.rem(160);
+      }
+      img {
+        @include mixin.anyHover() {
+          transform: scale(1.1);
+        }
+        width: 100%;
+        height: 100%;
+        transition: constants.$standartTrans;
+        object-fit: cover;
+      }
+    }
+  }
+}
