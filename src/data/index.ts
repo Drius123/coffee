@@ -1,7 +1,11 @@
 import instagram from "../assets/social-media/instagram.svg";
 import twitter from "../assets/social-media/twitter.svg";
 import facebook from "../assets/social-media/facebook.svg";
-import { FooterBtns } from "../types";
+
+import firstSlide from "../assets/coffee/coffee-slider-1.png";
+import secondSlide from "../assets/coffee/coffee-slider-2.png";
+import thirdSlide from "../assets/coffee/coffee-slider-3.png";
+import { FooterBtns, SliderCardProps } from "../types";
 
 const NavItems = ["Favorite coffee", "About", "Mobile app", "Contact us"];
 
@@ -11,4 +15,28 @@ const footerBtns: FooterBtns = [
   { SVG: facebook, link: "/facebooklink" },
 ];
 
-export { NavItems, footerBtns };
+const slideCards: SliderCardProps[] = [
+  {
+    img: firstSlide,
+    title: "S’mores Frappuccino",
+    description:
+      "This new drink takes an espresso and mixes it with brown sugar and cinnamon before being topped with oat milk.",
+    price: "$5.50",
+  },
+  {
+    img: secondSlide,
+    title: "Caramel Macchiato",
+    description:
+      "Fragrant and unique classic espresso with rich caramel-peanut syrup, with cream under whipped thick foam.",
+    price: "$5.00",
+  },
+  {
+    img: thirdSlide,
+    title: "Ice coffee",
+    description:
+      "A popular summer drink that tones and invigorates. Prepared from coffee, milk and ice.",
+    price: "$4.50",
+  },
+];
+
+export { NavItems, footerBtns, slideCards };

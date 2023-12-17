@@ -1,0 +1,11 @@
+@use "../../styles/constants.module.scss" as constants;
+@use "../../styles/functions.module.scss" as functions;
+@use "../../styles/mixin.module.scss" as mixin;
+
+.coffee {
+  h2 {
+    @include mixin.font($size: 60, $height: 125%, $weight: 600);
+    color: constants.$textColor;
+    text-align: center;
+  }
+}

@@ -1,0 +1,19 @@
+@use "../../styles/constants.module.scss" as constants;
+@use "../../styles/functions.module.scss" as functions;
+@use "../../styles/mixin.module.scss" as mixin;
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: constants.$textColor;
+  height: functions.rem(684);
+  .title,
+  .price {
+    @include mixin.font($size: 24, $height: 125%, $weight: 600);
+  }
+  .description {
+    @include mixin.font($size: 16, $height: 125%, $weight: 600);
+    width: functions.rem(480);
+  }
+}

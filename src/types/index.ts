@@ -18,4 +18,12 @@ export type FooterBtns = FooterBtnProps[];
 export interface BtnProps {
   type: "button" | "submit" | "reset";
   text: string;
+  onClick?: () => void;
+}
+
+export interface SliderCardProps {
+  img: string;
+  title: string;
+  description: string;
+  price: string;
 }
