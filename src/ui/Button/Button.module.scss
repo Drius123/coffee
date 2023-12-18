@@ -11,3 +11,7 @@
   text-align: center;
   @include mixin.font($size: 16, $height: 150%, $weight: 600);
 }
+.active {
+  background-color: constants.$footerBgColor;
+  color: constants.$footerBtnBorder;
+}

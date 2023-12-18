@@ -1,0 +1,24 @@
+@use "../../styles/constants.module.scss" as constants;
+@use "../../styles/functions.module.scss" as functions;
+@use "../../styles/mixin.module.scss" as mixin;
+
+.card {
+  width: functions.rem(310);
+  border-radius: functions.rem(30);
+  border: functions.rem(1) solid constants.$footerBtnBorder;
+  img {
+    border-radius: functions.rem(30);
+  }
+  .text {
+    padding: functions.rem(20);
+    .title,
+    .price {
+      @include mixin.font($size: 24, $height: 125%, $weight: 600);
+      color: constants.$textColor;
+    }
+    .description {
+      @include mixin.font($size: 16, $height: 150%, $weight: 400);
+      color: constants.$textColor;
+    }
+  }
+}

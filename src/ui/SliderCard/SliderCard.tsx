@@ -1,4 +1,4 @@
-import { SliderCardProps } from "../../types";
+import { CardProps } from "../../types";
 import styles from "./SliderCard.module.scss";
 
 export default function SliderCard({
@@ -6,7 +6,7 @@ export default function SliderCard({
   title,
   description,
   price,
-}: SliderCardProps) {
+}: CardProps) {
   return (
     <div className={styles.card}>
       <img src={img} alt="card" />

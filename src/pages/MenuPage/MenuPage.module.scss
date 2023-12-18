@@ -1,0 +1,42 @@
+@use "../../styles/constants.module.scss" as constants;
+@use "../../styles/functions.module.scss" as functions;
+@use "../../styles/mixin.module.scss" as mixin;
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: functions.rem(100);
+  .title {
+    max-width: functions.rem(800);
+    text-align: center;
+  }
+  .btns {
+    display: flex;
+    column-gap: functions.rem(16);
+    @include mixin.font($size: 16, $height: 150%, $weight: 600);
+    color: constants.$textColor;
+    margin: functions.rem(40) 0;
+    button {
+      width: auto;
+      height: functions.rem(46);
+      padding: 0 functions.rem(16) 0 functions.rem(8);
+      border-radius: functions.rem(100);
+      border: functions.rem(1) solid constants.$footerBtnBorder;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      column-gap: functions.rem(8);
+      transition: constants.$standartTrans;
+      @include mixin.anyHover() {
+        background-color: constants.$footerBgColor;
+        color: constants.$footerBtnBorder;
+      }
+    }
+  }
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: functions.rem(40);
+  }
+}

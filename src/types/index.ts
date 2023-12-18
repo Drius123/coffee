@@ -9,6 +9,7 @@ export enum EnumText {
   DownloadDescription = "Download the Resource app today and experience the comfort of ordering your favorite coffee from wherever you are",
   BtnAppStoreText = "Available on the App Store",
   BtnGooglePlayText = "Available on Google Play",
+  MenuPageText = "Behind each of our cups hides an amazing surprise",
 }
 
 export interface SomeInt {
@@ -27,9 +28,10 @@ export interface BtnProps {
   text: string;
   onClick?: () => void;
   children?: ReactNode;
+  active?: boolean;
 }
 
-export interface SliderCardProps {
+export interface CardProps {
   img: string;
   title: string;
   description: string;

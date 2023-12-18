@@ -4,6 +4,7 @@ import routeNames from "./routing/routs";
 import AppLayout from "./app-layout/appLayout";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import HomePage from "./pages/HomePage/HomePage";
+import MenuPage from "./pages/MenuPage/MenuPage";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
             element={<Navigate to={routeNames.HOME} />}
           />
           <Route path={routeNames.HOME} element={<HomePage />} />
+          <Route path={routeNames.MENU} element={<MenuPage />} />
         </Route>
       </Routes>
     </div>
