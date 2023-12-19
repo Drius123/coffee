@@ -11,11 +11,18 @@ import {
   MenuPageCardsTea,
 } from "../../data";
 import MenuCard from "../../ui/MenuCard/MenuCard";
+import ModalWindow from "../../ui/ModalWindow/ModalWindow";
 
 export default function MenuPage() {
   const [activeCoffe, setActiveCoffe] = useState<boolean>(true);
   const [activeTea, setActiveTea] = useState<boolean>(false);
   const [activeDesert, setActiveDesert] = useState<boolean>(false);
+
+  const [img, setImg] = useState<string>("");
+  const [title, setTitle] = useState<string>("");
+  const [description, setDescription] = useState<string>("");
+  const [price, setPrice] = useState<string>("");
+  const [visible, setVisible] = useState<boolean>(false);
 
   function handleClickCoffe() {
     setActiveCoffe(true);
@@ -73,9 +80,24 @@ export default function MenuPage() {
             title={item.title}
             description={item.description}
             price={item.price}
+            onClick={() => {
+              setImg(item.img);
+              setTitle(item.title);
+              setDescription(item.description);
+              setPrice(item.price);
+              setVisible(true);
+            }}
           />
         ))}
       </div>
+      <ModalWindow
+        img={img}
+        title={title}
+        description={description}
+        price={price}
+        active={visible}
+        onClick={() => setVisible(false)}
+      />
     </div>
   );
 }

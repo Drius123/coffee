@@ -6,8 +6,14 @@
   width: functions.rem(310);
   border-radius: functions.rem(30);
   border: functions.rem(1) solid constants.$footerBtnBorder;
+  cursor: pointer;
+  overflow: hidden;
   img {
+    transition: constants.$standartTrans;
     border-radius: functions.rem(30);
+    @include mixin.anyHover() {
+      transform: scale(1.1);
+    }
   }
   .text {
     padding: functions.rem(20);

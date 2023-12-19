@@ -36,8 +36,18 @@ export interface CardProps {
   title: string;
   description: string;
   price: string;
+  onClick: () => void;
 }
 
 export interface SectionAboutProps {
   img: string[];
+}
+
+export interface ModalWindowProps {
+  img: string;
+  title: string;
+  description: string;
+  price: string;
+  active: boolean;
+  onClick: () => void;
 }

@@ -1,0 +1,31 @@
+@use "../../styles/constants.module.scss" as constants;
+@use "../../styles/functions.module.scss" as functions;
+@use "../../styles/mixin.module.scss" as mixin;
+
+.modal-window {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: constants.$modalWindowBgColor;
+  transition: constants.$standartTrans;
+  .window {
+    max-width: functions.rem(880);
+    background-color: constants.$footerTextColor;
+    height: functions.rem(500);
+  }
+}
+.hidden {
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0 0 0 0);
+  transition: constants.$standartTrans;
+}

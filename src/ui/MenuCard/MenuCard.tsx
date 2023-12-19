@@ -6,9 +6,10 @@ export default function MenuCard({
   title,
   description,
   price,
+  onClick,
 }: CardProps) {
   return (
-    <div className={styles.card}>
+    <div className={styles.card} onClick={onClick} role="presentation">
       <img src={img} alt="img" />
       <div className={styles.text}>
         <h2 className={styles.title}>{title}</h2>
