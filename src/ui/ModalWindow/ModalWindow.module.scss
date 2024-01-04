@@ -6,7 +6,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  position: absolute;
+  position: fixed;
   top: 0;
   bottom: 0;
   right: 0;
@@ -14,9 +14,52 @@
   background-color: constants.$modalWindowBgColor;
   transition: constants.$standartTrans;
   .window {
+    display: flex;
+    column-gap: functions.rem(16);
+    padding: functions.rem(16);
     max-width: functions.rem(880);
     background-color: constants.$footerTextColor;
     height: functions.rem(500);
+    border-radius: functions.rem(50);
+    .image {
+      max-width: functions.rem(340);
+      height: auto;
+      img {
+        border-radius: functions.rem(50);
+      }
+    }
+    .information {
+      display: flex;
+      flex-direction: column;
+      row-gap: functions.rem(20);
+      .title,
+      .totals {
+        @include mixin.font($size: 24, $height: 125%, $weight: 600);
+        color: constants.$textColor;
+      }
+      .description,
+      .size,
+      .add {
+        @include mixin.font($size: 16, $height: 125%, $weight: 400);
+        color: constants.$textColor;
+      }
+      .totals {
+        display: flex;
+        justify-content: space-between;
+      }
+      .btns {
+        button {
+          @include mixin.font($size: 16, $height: 125%, $weight: 600);
+          border: functions.rem(1) solid constants.$footerBtnBorder;
+          width: functions.rem(117);
+          height: functions.rem(46);
+          @include mixin.anyHover() {
+            background-color: constants.$footerBgColor;
+            color: constants.$footerTextColor;
+          }
+        }
+      }
+    }
   }
 }
 .hidden {

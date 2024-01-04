@@ -8,16 +8,13 @@ export default function ModalWindow({
   description,
   price,
   active,
+  btns,
   onClick,
 }: ModalWindowProps) {
   return (
     <div
-      className={
-        !active
-          ? `${styles["modal-window"]}${styles.hidden}`
-          : styles["modal-window"]
-      }
-      onClick={() => onClick()}
+      className={!active ? styles.hidden : styles["modal-window"]}
+      onClick={(e) => onClick(e)}
       role="presentation">
       <div className={styles.window}>
         <div className={styles.image}>
@@ -29,17 +26,17 @@ export default function ModalWindow({
           <div className={styles.sizes}>
             <p className={styles.size}>Size</p>
             <div className={styles.btns}>
-              <Btn type="button" text="200 ml" />
-              <Btn type="button" text="300 ml" />
-              <Btn type="button" text="400 ml" />
+              {btns.size.map((item) => (
+                <Btn type="button" text={item} />
+              ))}
             </div>
           </div>
           <div className={styles.additives}>
             <p className={styles.add}>Additives</p>
             <div className={styles.btns}>
-              <Btn type="button" text="Sugar" />
-              <Btn type="button" text="Cinnamon" />
-              <Btn type="button" text="Syrup" />
+              {btns.additives.map((item) => (
+                <Btn type="button" text={item} />
+              ))}
             </div>
           </div>
           <div className={styles.totals}>

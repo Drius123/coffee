@@ -9,6 +9,9 @@ import {
   MenuPageCardsCoffee,
   MenuPageCardsDesert,
   MenuPageCardsTea,
+  coffeeBtns,
+  desertBtns,
+  teaBtns,
 } from "../../data";
 import MenuCard from "../../ui/MenuCard/MenuCard";
 import ModalWindow from "../../ui/ModalWindow/ModalWindow";
@@ -96,7 +99,11 @@ export default function MenuPage() {
         description={description}
         price={price}
         active={visible}
-        onClick={() => setVisible(false)}
+        // eslint-disable-next-line no-nested-ternary
+        btns={activeCoffe ? coffeeBtns : activeDesert ? desertBtns : teaBtns}
+        onClick={(event) =>
+          event.currentTarget === event.target && setVisible(false)
+        }
       />
     </div>
   );

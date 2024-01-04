@@ -34,7 +34,7 @@ import desert6 from "../assets/MenuCards/Desert/dessert-6.png";
 import desert7 from "../assets/MenuCards/Desert/dessert-7.png";
 import desert8 from "../assets/MenuCards/Desert/dessert-8.png";
 
-import { FooterBtns, CardProps } from "../types";
+import { FooterBtns, CardProps, Btns } from "../types";
 
 const NavItems = ["Favorite coffee", "About", "Mobile app", "Contact us"];
 
@@ -208,6 +208,21 @@ const MenuPageCardsDesert: CardProps[] = [
   },
 ];
 
+const teaBtns: Btns = {
+  size: ["200ml", "300ml", "400ml"],
+  additives: ["Sugar", "Lemon", "Syrup"],
+};
+
+const desertBtns: Btns = {
+  size: ["50g", "100g", "200g"],
+  additives: ["Berries", "Nuts", "Jam"],
+};
+
+const coffeeBtns: Btns = {
+  size: ["200ml", "300ml", "400ml"],
+  additives: ["Sugar", "Cinnamon", "Syrup"],
+};
+
 export {
   NavItems,
   footerBtns,
@@ -216,4 +231,7 @@ export {
   MenuPageCardsCoffee,
   MenuPageCardsTea,
   MenuPageCardsDesert,
+  teaBtns,
+  desertBtns,
+  coffeeBtns,
 };

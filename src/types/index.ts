@@ -36,7 +36,7 @@ export interface CardProps {
   title: string;
   description: string;
   price: string;
-  onClick: () => void;
+  onClick?: () => void;
 }
 
 export interface SectionAboutProps {
@@ -49,5 +49,13 @@ export interface ModalWindowProps {
   description: string;
   price: string;
   active: boolean;
-  onClick: () => void;
+  btns: Btns;
+  onClick: (
+    event: React.MouseEvent<HTMLDivElement, MouseEvent>
+  ) => false | void;
+}
+
+export interface Btns {
+  size: string[];
+  additives: string[];
 }
