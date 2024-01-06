@@ -10,6 +10,7 @@ export enum EnumText {
   BtnAppStoreText = "Available on the App Store",
   BtnGooglePlayText = "Available on Google Play",
   MenuPageText = "Behind each of our cups hides an amazing surprise",
+  AlertText = "The cost is not final. Download our mobile app to see the final price and place your order. Earn loyalty points and enjoy your favorite coffee with up to 20% discount.",
 }
 
 export interface SomeInt {
@@ -49,6 +50,7 @@ export interface ModalWindowProps {
   description: string;
   price: string;
   active: boolean;
+  setVisible: React.Dispatch<React.SetStateAction<boolean>>;
   btns: Btns;
   onClick: (
     event: React.MouseEvent<HTMLDivElement, MouseEvent>

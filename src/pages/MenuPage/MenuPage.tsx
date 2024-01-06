@@ -99,6 +99,7 @@ export default function MenuPage() {
         description={description}
         price={price}
         active={visible}
+        setVisible={setVisible}
         // eslint-disable-next-line no-nested-ternary
         btns={activeCoffe ? coffeeBtns : activeDesert ? desertBtns : teaBtns}
         onClick={(event) =>

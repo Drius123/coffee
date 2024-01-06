@@ -37,6 +37,30 @@
         @include mixin.font($size: 24, $height: 125%, $weight: 600);
         color: constants.$textColor;
       }
+      .totals {
+        border-bottom: functions.rem(1) solid constants.$footerBtnBorder;
+        padding-bottom: functions.rem(20);
+      }
+      .alert {
+        display: flex;
+        column-gap: functions.rem(8);
+        align-items: start;
+        @include mixin.font($size: 10, $height: 140%, $weight: 600);
+        color: constants.$textColor;
+      }
+      .btn-close {
+        width: 100%;
+        button {
+          width: 100%;
+          height: functions.rem(44);
+          border: functions.rem(1) solid constants.$footerBtnBorder;
+          @include mixin.font($size: 16, $height: 150%, $weight: 600);
+          @include mixin.anyHover() {
+            background-color: constants.$footerBgColor;
+            color: constants.$footerTextColor;
+          }
+        }
+      }
       .description,
       .size,
       .add {
