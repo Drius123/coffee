@@ -77,12 +77,14 @@ export default function MenuPage() {
           (activeTea && MenuPageCardsTea) ||
           (activeDesert && MenuPageCardsDesert) ||
           []
-        ).map((item) => (
+        ).map((item, index) => (
           <MenuCard
             img={item.img}
             title={item.title}
             description={item.description}
             price={item.price}
+            // eslint-disable-next-line react/no-array-index-key
+            key={index}
             onClick={() => {
               setImg(item.img);
               setTitle(item.title);

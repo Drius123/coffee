@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { EnumText, ModalWindowProps } from "../../types";
 import Btn from "../Button/Button";
 import info from "../../assets/info-empty.svg";
@@ -46,6 +46,15 @@ export default function ModalWindow({
     setThirdBtnAdditivesActive,
   ];
 
+  useEffect(
+    () =>
+      setBtnAdditivesActive
+        .concat(setBtnSizeActive)
+        .forEach((item, index) => (index === 3 ? item(true) : item(false))),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [btns]
+  );
+
   return (
     <div
       className={!active ? styles.hidden : styles["modal-window"]}
@@ -64,6 +73,7 @@ export default function ModalWindow({
               {btns.size.map((item, index) => (
                 <Btn
                   type="button"
+                  key={item}
                   text={item}
                   active={btnSizeActive[index]}
                   onClick={() => {
@@ -82,6 +92,7 @@ export default function ModalWindow({
               {btns.additives.map((item, index) => (
                 <Btn
                   type="button"
+                  key={item}
                   text={item}
                   active={btnAdditivesActive[index]}
                   onClick={() =>
