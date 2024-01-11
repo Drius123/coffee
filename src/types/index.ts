@@ -52,9 +52,6 @@ export interface ModalWindowProps {
   active: boolean;
   setVisible: React.Dispatch<React.SetStateAction<boolean>>;
   btns: Btns;
-  onClick: (
-    event: React.MouseEvent<HTMLDivElement, MouseEvent>
-  ) => false | void;
 }
 
 export interface Btns {

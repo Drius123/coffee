@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { EnumText, ModalWindowProps } from "../../types";
 import Btn from "../Button/Button";
 import info from "../../assets/info-empty.svg";
@@ -12,7 +12,6 @@ export default function ModalWindow({
   active,
   setVisible,
   btns,
-  onClick,
 }: ModalWindowProps) {
   const [firstBtnSizeActive, setFirstBtnSizeActive] = useState<boolean>(true);
   const [secondBtnSizeActive, setSecondBtnSizeActive] =
@@ -45,20 +44,16 @@ export default function ModalWindow({
     setSecondBtnAdditivesActive,
     setThirdBtnAdditivesActive,
   ];
-
-  useEffect(
-    () =>
-      setBtnAdditivesActive
-        .concat(setBtnSizeActive)
-        .forEach((item, index) => (index === 3 ? item(true) : item(false))),
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    [btns]
-  );
-
+  function changeCard() {
+    setBtnAdditivesActive
+      .concat(setBtnSizeActive)
+      .forEach((item, index) => (index === 3 ? item(true) : item(false)));
+    setVisible(false);
+  }
   return (
     <div
       className={!active ? styles.hidden : styles["modal-window"]}
-      onClick={(e) => onClick(e)}
+      onClick={(e) => e.currentTarget === e.target && changeCard()}
       role="presentation">
       <div className={styles.window}>
         <div className={styles.image}>
@@ -111,7 +106,7 @@ export default function ModalWindow({
             <p>{EnumText.AlertText}</p>
           </div>
           <div className={styles["btn-close"]}>
-            <Btn type="button" text="Close" onClick={() => setVisible(false)} />
+            <Btn type="button" text="Close" onClick={() => changeCard()} />
           </div>
         </div>
       </div>

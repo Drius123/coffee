@@ -104,9 +104,6 @@ export default function MenuPage() {
         setVisible={setVisible}
         // eslint-disable-next-line no-nested-ternary
         btns={activeCoffe ? coffeeBtns : activeDesert ? desertBtns : teaBtns}
-        onClick={(event) =>
-          event.currentTarget === event.target && setVisible(false)
-        }
       />
     </div>
   );

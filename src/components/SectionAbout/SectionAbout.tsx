@@ -8,7 +8,7 @@ export default function SectionAbout({ img }: SectionAboutProps) {
       <h2 className={styles.text}>{EnumText.TextAbout}</h2>
       <div className={styles.photos}>
         {img.map((item, i) => (
-          <div className={styles.photo}>
+          <div className={styles.photo} key={i}>
             <img src={item} alt="img" key={i} />
           </div>
         ))}
