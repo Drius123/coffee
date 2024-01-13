@@ -9,6 +9,9 @@
   height: functions.rem(644);
   border-radius: functions.rem(40);
   background-image: url(../../assets/previewBg.png);
+  @include mixin.anyMedia(1150) {
+    padding: functions.rem(100) functions.rem(60);
+  }
   &__content {
     display: flex;
     flex-direction: column;

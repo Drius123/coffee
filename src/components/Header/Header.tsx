@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import Logo from "../../assets/logo.svg";
-import cup from "../../assets/coffee-cup.svg";
 import routeNames from "../../routing/routs";
 import styles from "./Header.module.scss";
 import Nav from "../../ui/Nav/Nav";
-import { EnumText } from "../../types";
+import NavMenu from "../../ui/NavMenu/NavMenu";
+import Burger from "../../ui/Burger/Burger";
 
 export default function Header() {
   const [active, setActive] = useState<boolean>(false);
@@ -14,14 +14,13 @@ export default function Header() {
       <NavLink to={routeNames.HOME} onClick={() => setActive(false)}>
         <img src={Logo} alt="Logo" />
       </NavLink>
-      <Nav />
-      <NavLink
-        to={routeNames.MENU}
-        className={!active ? styles.menu : `${styles.menu} ${styles.active}`}
-        onClick={() => setActive(!active)}>
-        {EnumText.Menu}
-        <img src={cup} alt="cup" />
-      </NavLink>
+      <div className={styles.nav}>
+        <Nav />
+      </div>
+      <div className={styles["nav-menu"]}>
+        <NavMenu active={active} setActive={() => setActive(!active)} />
+      </div>
+      <Burger active={active} setActive={setActive} />
     </div>
   );
 }

@@ -7,15 +7,10 @@
   justify-content: space-between;
   align-items: center;
   color: constants.$textColor;
-  .menu {
-    @include mixin.font($size: 16, $height: 150%, $weight: 600);
-    transition: constants.$standartTrans;
-    border-bottom: functions.rem(0) solid constants.$textColor;
-    @include mixin.anyHover() {
-      border-bottom: functions.rem(1) solid constants.$textColor;
-    }
-    img {
-      padding-left: functions.rem(8);
+  .nav,
+  .nav-menu {
+    @include mixin.media-tablet() {
+      display: none;
     }
   }
   .active {

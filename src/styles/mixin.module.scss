@@ -39,6 +39,11 @@
     @content;
   }
 }
+@mixin anyMedia($width) {
+  @media (max-width: ($width + px)) {
+    @content;
+  }
+}
 
 @mixin anyHover() {
   @media (any-hover: hover) {

@@ -5,6 +5,12 @@
 .mobile-app {
   display: flex;
   column-gap: functions.rem(40);
+  padding-top: functions.rem(100);
+  @include mixin.anyMedia(1150) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
   .download {
     display: flex;
     flex-direction: column;

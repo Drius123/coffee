@@ -58,3 +58,13 @@ export interface Btns {
   size: string[];
   additives: string[];
 }
+
+export interface NavMenuProps {
+  active: boolean;
+  setActive: () => void;
+}
+
+export interface BurgerProps {
+  active: boolean;
+  setActive: (par: boolean) => void;
+}

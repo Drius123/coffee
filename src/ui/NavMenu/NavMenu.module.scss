@@ -1,0 +1,18 @@
+@use "../../styles/constants.module.scss" as constants;
+@use "../../styles/functions.module.scss" as functions;
+@use "../../styles/mixin.module.scss" as mixin;
+
+.nav-menu {
+  @include mixin.font($size: 16, $height: 150%, $weight: 600);
+  transition: constants.$standartTrans;
+  border-bottom: functions.rem(0) solid constants.$textColor;
+  @include mixin.anyHover() {
+    border-bottom: functions.rem(1) solid constants.$textColor;
+  }
+  img {
+    padding-left: functions.rem(8);
+  }
+}
+.active {
+  border-bottom: functions.rem(1) solid constants.$textColor;
+}

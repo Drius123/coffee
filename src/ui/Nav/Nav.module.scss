@@ -6,6 +6,11 @@
   .nav-menu {
     display: flex;
     column-gap: functions.rem(40);
+    @include mixin.media-tablet() {
+      flex-direction: column;
+      align-items: center;
+      row-gap: functions.rem(60);
+    }
     .item {
       a {
         transition: constants.$standartTrans;

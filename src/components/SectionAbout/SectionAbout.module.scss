@@ -11,6 +11,15 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: functions.rem(40);
+    padding-top: functions.rem(40);
+    @include mixin.anyMedia(1450) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      @include mixin.last() {
+        bottom: functions.rem(0);
+      }
+    }
     .photo {
       overflow: hidden;
       border-radius: functions.rem(20);
@@ -23,6 +32,19 @@
         position: relative;
         height: functions.rem(590);
         bottom: functions.rem(160);
+      }
+      @include mixin.anyMedia(1450) {
+        @include mixin.last() {
+          bottom: functions.rem(0);
+        }
+      }
+      @include mixin.media-tablet() {
+        @include mixin.notLast() {
+          display: none;
+        }
+        @include mixin.first() {
+          display: inline;
+        }
       }
       img {
         transform: scale(1.1);
