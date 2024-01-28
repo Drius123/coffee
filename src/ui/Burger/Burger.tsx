@@ -13,7 +13,9 @@ export default function Burger({ active, setActive }: BurgerProps) {
         menuActive
           ? `${styles.burger} ${styles["active-burger"]}`
           : styles.burger
-      }>
+      }
+      onClick={() => setMenuActive(!menuActive)}
+      role="presentation">
       <Btn
         type="button"
         text=""
