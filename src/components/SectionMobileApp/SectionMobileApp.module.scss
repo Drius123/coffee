@@ -19,6 +19,11 @@
     .title {
       @include mixin.font($size: 60, $height: 125%, $weight: 600);
       color: constants.$textColor;
+      @include mixin.adaptiveClamp(
+        $property: font-size,
+        $startSize: 60,
+        $minSize: 32
+      );
     }
     .description {
       @include mixin.font($size: 16, $height: 150%, $weight: 400);
@@ -26,6 +31,8 @@
     }
     .links {
       display: flex;
+      flex-wrap: wrap;
+      row-gap: functions.rem(20);
       column-gap: functions.rem(20);
       a {
         display: flex;
@@ -36,6 +43,15 @@
         border-radius: functions.rem(200);
         border: functions.rem(1) solid constants.$footerBgColor;
       }
+    }
+  }
+  .mobiles {
+    img {
+      @include mixin.adaptiveClamp(
+        $property: width,
+        $startSize: 660,
+        $minSize: 348
+      );
     }
   }
 }

@@ -4,6 +4,7 @@
 
 .footer {
   display: flex;
+  flex-wrap: wrap;
   padding: functions.rem(100);
   @include mixin.adaptiveClamp(
     $property: column-gap,

@@ -3,13 +3,15 @@
 @use "../../styles/mixin.module.scss" as mixin;
 
 .header {
-  position: sticky;
-  top: functions.rem(20);
   display: flex;
   justify-content: space-between;
   align-items: center;
   color: constants.$textColor;
   z-index: 100;
+  @include mixin.media-tablet() {
+    position: sticky;
+    top: functions.rem(20);
+  }
   .nav,
   .nav-menu {
     @include mixin.media-tablet() {

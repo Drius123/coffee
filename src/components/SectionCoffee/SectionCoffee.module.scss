@@ -5,6 +5,11 @@
 .coffee {
   h2 {
     @include mixin.font($size: 60, $height: 125%, $weight: 600);
+    @include mixin.adaptiveClamp(
+      $property: font-size,
+      $startSize: 60,
+      $minSize: 32
+    );
     color: constants.$textColor;
     text-align: center;
   }

@@ -14,7 +14,11 @@
   }
   .description {
     @include mixin.font($size: 16, $height: 125%, $weight: 600);
-    width: functions.rem(480);
+    @include mixin.adaptiveClamp(
+      $property: width,
+      $startSize: 480,
+      $minSize: 348
+    );
     text-align: center;
   }
 }

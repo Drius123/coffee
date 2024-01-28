@@ -13,6 +13,7 @@
   left: 0;
   background-color: constants.$modalWindowBgColor;
   transition: constants.$standartTrans;
+  z-index: 101;
   .window {
     display: flex;
     column-gap: functions.rem(16);
@@ -21,9 +22,15 @@
     background-color: constants.$footerTextColor;
     height: functions.rem(500);
     border-radius: functions.rem(50);
+    @include mixin.anyMedia(787) {
+      height: auto;
+    }
     .image {
       max-width: functions.rem(340);
       height: auto;
+      @include mixin.anyMedia(767) {
+        display: none;
+      }
       img {
         border-radius: functions.rem(50);
       }
@@ -72,6 +79,11 @@
         justify-content: space-between;
       }
       .btns {
+        @include mixin.media-tablet() {
+          display: flex;
+          flex-wrap: wrap;
+          gap: functions.rem(6);
+        }
         button {
           @include mixin.font($size: 16, $height: 125%, $weight: 600);
           border: functions.rem(1) solid constants.$footerBtnBorder;

@@ -10,6 +10,13 @@
   .title {
     max-width: functions.rem(800);
     text-align: center;
+    @include mixin.font($size: 60, $height: 125%, $weight: 600);
+    @include mixin.adaptiveClamp(
+      $property: font-size,
+      $startSize: 60,
+      $minSize: 32
+    );
+    color: constants.$textColor;
   }
   .btns {
     display: flex;

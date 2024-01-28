@@ -12,6 +12,9 @@
   @include mixin.anyMedia(1150) {
     padding: functions.rem(100) functions.rem(60);
   }
+  @include mixin.media-tablet() {
+    padding: functions.rem(60) functions.rem(16);
+  }
   &__content {
     display: flex;
     flex-direction: column;
@@ -20,6 +23,11 @@
     h1 {
       @include mixin.font($size: 72, $height: 105%, $weight: 600);
       font-style: italic;
+      @include mixin.adaptiveClamp(
+        $property: font-size,
+        $startSize: 72,
+        $minSize: 42
+      );
     }
     p {
       @include mixin.font($size: 16, $height: 150%, $weight: 400);

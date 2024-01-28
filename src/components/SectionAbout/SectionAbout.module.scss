@@ -5,6 +5,11 @@
 .about {
   .text {
     @include mixin.font($size: 60, $height: 125%, $weight: 600);
+    @include mixin.adaptiveClamp(
+      $property: font-size,
+      $startSize: 60,
+      $minSize: 32
+    );
     color: constants.$textColor;
   }
   .photos {
@@ -23,7 +28,11 @@
     .photo {
       overflow: hidden;
       border-radius: functions.rem(20);
-      width: functions.rem(660);
+      @include mixin.adaptiveClamp(
+        $property: width,
+        $startSize: 660,
+        $minSize: 325
+      );
       height: functions.rem(430);
       @include mixin.first() {
         height: functions.rem(590);
